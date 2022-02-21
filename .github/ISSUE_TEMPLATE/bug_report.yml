@@ -15,12 +15,12 @@ body:
 
     - type: markdown
       attributes:
-          value: '## Core Information'
+          value: '## Issue report'
 
     - type: textarea
       id: description
       attributes:
-          label: Issue description
+          label: Description
           description: Briefly describe the issue.
       validations:
           required: true
@@ -43,12 +43,33 @@ body:
           
     - type: markdown
       attributes:
-          value: '## Diagnostic Information'
+          value: '## Diagnostics'
+    - type: markdown
+      attributes:
+          value: '### Your machine information'
+          
+    - type: dropdown
+      id: os
+      attributes:
+          label: Operating System
+          description: Which OS does this issue occur on? (Select all that apply)
+          multiple: true
+          options:
+            - Linux
+            - Mac
+            - Windows
+      validations:
+          required: true
+          
+    - type: markdown
+      attributes:
+          value: '### Firefly application information'
           
     - type: dropdown
       id: platform
       attributes:
           label: Platform
+          description: What platform does this issue occur on? (Select all that apply)
           multiple: true
           options:
             - Desktop
@@ -59,22 +80,38 @@ body:
       id: version
       attributes:
           label: Version
+          description: What version of Firefly are you using? (Select all that apply)
           placeholder: "1.3.3"
       validations:
           required: true
           
-    - type: dropdown
-      id: os
+    - type: markdown
       attributes:
-          label: Operating System
-          description: Which OS is this bug occuring on? (select all that apply)
-          multiple: true
+          value: '### Use of firefly information'
+          
+    - type: dropdown
+      id: profile_role
+      attributes:
+          label: Developer Profile
+          description: Are you using a developer profile?
+          multiple: false
           options:
-            - Linux
-            - Mac
-            - Windows
+            - No
+            - Yes
       validations:
-          required: true   
+          required: true
+          
+    - type: dropdown
+      id: profile_type
+      attributes:
+          label: Profile Type
+          description: Are you using a developer profile?
+          multiple: false
+          options:
+            - Software
+            - Hardware (Ledger)
+      validations:
+          required: true
 
     - type: dropdown
       id: can_repro
