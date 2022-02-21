@@ -1,7 +1,7 @@
 ---
 name: Found a bug?
 description: Fill in this form to report it, and help us improve
-title: '[Bug]: '
+title: '[Bug report]: '
 labels: 'bug report'
 
 body:
@@ -40,13 +40,31 @@ body:
           description: A concise description of what actually happened.
       validations:
           required: true
-          
+    
+    - type: dropdown
+      id: can_repro
+      attributes:
+          label: Can the issue reliably be reproduced?
+          options:
+              - 'Yes'
+              - 'No'
+      validations:
+          required: true
+
+    - type: textarea
+      id: repro_steps
+      attributes:
+          label: Steps to reproduce the issue
+          description: Explain how the maintainer can reproduce the issue.
+          placeholder: |
+              1.
+              2.
+              3.
+              ...
+    
     - type: markdown
       attributes:
-          value: '## Diagnostics'
-    - type: markdown
-      attributes:
-          value: '### Your machine information'
+          value: '## Your machine information'
           
     - type: dropdown
       id: os
@@ -61,9 +79,16 @@ body:
       validations:
           required: true
           
+     - type: textarea
+      id: diagnostics
+      attributes:
+          label: Diagnostics
+          description: Paste information that you see from the Diagnostics popup accessible in the Firefly main menu or settings page.
+          render: shell
+          
     - type: markdown
       attributes:
-          value: '### Firefly application information'
+          value: '## Firefly application information'
           
     - type: dropdown
       id: platform
@@ -87,7 +112,7 @@ body:
           
     - type: markdown
       attributes:
-          value: '### Use of firefly information'
+          value: '## Use of firefly information'
           
     - type: dropdown
       id: profile_role
@@ -112,40 +137,49 @@ body:
             - Hardware (Ledger)
       validations:
           required: true
-
+          
     - type: dropdown
-      id: can_repro
+      id: staking_status
       attributes:
-          label: Can the issue reliably be reproduced?
+          label: Staking
+          description: What is the state of staking in your profile?
+          multiple: false
           options:
-              - 'Yes'
-              - 'No'
+            - Actively staking
+            - Previously staked
+            - Never staked
       validations:
-          required: true
+              
+    - type: markdown
+      attributes:
+          value: '## Error information'
+          
+    - type: dropdown
+      id: crash_info
+      attributes:
+          label: Crash_status
+          description: Did firefly crash, hang or freeze?
+          multiple: false
+          options:
+            - No
+            - Infinite loading symbol
+            - Non-responsive
+            - White screen
+            - Application closed
+      validations:
+        required: true
+          
+    - type: textarea
+      id: error_messages
+      attributes:
+          label: Error Messages
+          description: Did any error messages display on the screen? If so what was the message?
 
     - type: textarea
-      id: repro_steps
+      id: error_logs
       attributes:
-          label: Steps to reproduce the issue
-          description: Explain how the maintainer can reproduce the issue.
-          placeholder: |
-              1.
-              2.
-              3.
-              ...
-
-    - type: textarea
-      id: diagnostics
-      attributes:
-          label: Diagnostics
-          description: Paste information that you see from the Diagnostics in the Firefly menu.
-          render: shell
-
-    - type: textarea
-      id: errors
-      attributes:
-          label: Errors
-          description: Paste any errors that you see from the Error Log in the Firefly menu.
+          label: Error Logs
+          description: Paste the latest errors that you see from the Error Log in the Firefly menu.
           render: shell
 
     - type: checkboxes
