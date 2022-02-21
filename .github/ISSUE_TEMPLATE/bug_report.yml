@@ -75,7 +75,7 @@ body:
             - label: Mac
             - label: Windows
             - label: iOS
-            - Label: Android
+            - label: Android
       validations:
           required: true
 
