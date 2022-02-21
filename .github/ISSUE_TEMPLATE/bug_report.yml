@@ -96,8 +96,8 @@ body:
           description: Are you using a developer profile?
           multiple: false
           options:
-            - No
-            - Yes
+            - "No"
+            - "Yes"
       validations:
           required: true
           
