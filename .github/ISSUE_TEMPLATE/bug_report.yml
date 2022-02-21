@@ -52,8 +52,6 @@ body:
           multiple: true
           options:
             - Desktop
-            - Mobile
-            - Web
       validations:
           required: true      
     
@@ -65,19 +63,18 @@ body:
       validations:
           required: true
           
-    - type: checkboxes
+    - type: dropdown
       id: os
       attributes:
           label: Operating System
-          description: Which OS does this occur on? (Select all that apply)
+          description: Which OS is this bug occuring on? (select all that apply)
+          multiple: true
           options:
-            - label: Linux
-            - label: Mac
-            - label: Windows
-            - label: iOS
-            - label: Android
+            - Linux
+            - Mac
+            - Windows
       validations:
-          required: true
+          required: true   
 
     - type: dropdown
       id: can_repro
