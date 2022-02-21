@@ -71,11 +71,11 @@ body:
           label: Operating System
           description: Which OS does this occur on? (Select all that apply)
           options:
-            - Linux
-            - Mac
-            - Windows
-            - iOS
-            - Android
+            - label: Linux
+            - label: Mac
+            - label: Windows
+            - label: iOS
+            - Label: Android
       validations:
           required: true
 
