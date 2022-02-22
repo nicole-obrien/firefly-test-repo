@@ -1,56 +1,51 @@
-name: New Task
-description: Create a new work package
-title: "[Task]: "
-labels: ["task"]
+---
+name: Create a new task
+description: Create a new task to manage work
+title: '[Task]: '
+
 body:
-  - type: input
-    id: contact
+  - type: markdown
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+      value: "## Creating a task"
+  - type: markdown
+    attributes:
+      value: |
+        This form should be used by official maintainers only, to create new tasks to represent some work. Most tasks should be assigned to a milestone
+
   - type: textarea
-    id: what-happened
+    id: description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Task description
+      description: Briefly describe the issue.
     validations:
       required: true
-  - type: dropdown
-    id: version
+      
+  - type: textarea
+    id: requirements
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+      label: Requirements
+      description: Briefly describe the issue.
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      
   - type: textarea
-    id: logs
+    id: acceptance_criteria
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      label: Acceptance criteria
+      description: Briefly describe the issue.
+    validations:
+      required: true
+      
   - type: checkboxes
-    id: terms
+    id: checklist
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      label: Creation checklist
+      description: "Before submitting this task please ensure you have done the following:"
       options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+        - label: I have assigned this task to the correct people
+          required: false
+        - label: I have added the most appropriate labels
+          required: false
+        - label: I have linked the correct milestone and/or project
+          required: false
+          
