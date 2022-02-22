@@ -83,7 +83,7 @@ body:
       id: diagnostics
       attributes:
           label: Diagnostics
-          description: Paste information that you see from the Diagnostics popup accessible in the Firefly main menu or settings page.
+          description: Paste the information from the Diagnostics popup accessible in the Firefly main menu or settings page.
           render: shell
           
     - type: markdown
@@ -179,7 +179,7 @@ body:
       id: error_logs
       attributes:
           label: Error Logs
-          description: Paste the latest errors that you see from the Error Log in the Firefly menu.
+          description: Paste the latest errors from the error log, accessible in the Firefly main menu or settings page
           render: shell
 
     - type: markdown
