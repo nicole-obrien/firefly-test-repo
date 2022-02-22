@@ -79,7 +79,7 @@ body:
       validations:
           required: true
           
-     - type: textarea
+    - type: textarea
       id: diagnostics
       attributes:
           label: Diagnostics
