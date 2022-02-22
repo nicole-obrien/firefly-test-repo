@@ -64,7 +64,7 @@ body:
     
     - type: markdown
       attributes:
-          value: '## Your machine information'
+          value: '## Your machine'
           
     - type: dropdown
       id: os
@@ -88,7 +88,7 @@ body:
           
     - type: markdown
       attributes:
-          value: '## Firefly application information'
+          value: '## Firefly application'
           
     - type: dropdown
       id: platform
@@ -112,7 +112,7 @@ body:
           
     - type: markdown
       attributes:
-          value: '## Use of firefly information'
+          value: '## Use of firefly'
           
     - type: dropdown
       id: profile_role
@@ -181,6 +181,10 @@ body:
           label: Error Logs
           description: Paste the latest errors that you see from the Error Log in the Firefly menu.
           render: shell
+
+    - type: markdown
+      attributes:
+          value: '## Declarations'
 
     - type: checkboxes
       id: duplicate_declaration
