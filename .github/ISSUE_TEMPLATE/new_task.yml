@@ -1,6 +1,6 @@
 ---
-name: Create a new task
-description: Create a new task to manage work
+name: New task
+description: Create a new task to manage a piece of work
 title: '[Task]: '
 
 body:
@@ -10,13 +10,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        This form should be used by official maintainers only, to create new tasks to represent some work. Most tasks should be assigned to a milestone
+        This form should be used by members of the cybersecurity team only, to create new tasks to represent some work. Most tasks should be assigned to a milestone. If you would like to request some work to be done please fill out the work requst form.
 
   - type: textarea
     id: description
     attributes:
       label: Task description
-      description: Briefly describe the issue.
+      description: Briefly describe the work to be done.
     validations:
       required: true
       
@@ -24,7 +24,7 @@ body:
     id: requirements
     attributes:
       label: Requirements
-      description: Briefly describe the issue.
+      description: List the specific requirements or sub tasks for this item.
     validations:
       required: true
       
@@ -32,7 +32,7 @@ body:
     id: acceptance_criteria
     attributes:
       label: Acceptance criteria
-      description: Briefly describe the issue.
+      description: The definition of done.
     validations:
       required: true
       
@@ -45,7 +45,7 @@ body:
         - label: I have assigned this task to the correct people
           required: false
         - label: I have added the most appropriate labels
-          required: false
+          required: true
         - label: I have linked the correct milestone and/or project
-          required: false
+          required: true
           
