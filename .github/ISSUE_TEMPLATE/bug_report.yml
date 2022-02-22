@@ -157,7 +157,7 @@ body:
     - type: dropdown
       id: crash_info
       attributes:
-          label: Crash_status
+          label: Crash Status
           description: Did firefly crash, hang or freeze?
           multiple: false
           options:
